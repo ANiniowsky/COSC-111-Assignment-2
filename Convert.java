@@ -1,5 +1,10 @@
 //This is a program that will prompt user for input, and will convert the resulting number into gallons and US dollars.
 import java.util.*;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandlers;
 import java.text.DecimalFormat;
 
 public class Convert {
@@ -15,7 +20,6 @@ public class Convert {
         keepConverting="Y";     //Initial value for keepConverting
         DecimalFormat f = new DecimalFormat("##.##");   //Playing around, seeing how this works. 
         Scanner sc = new Scanner(System.in);    //Start of the scanner prompting input from user.
-
         while (keepConverting.toUpperCase().equals("Y")){
             System.out.println("Enter number of liters: ");
             liters = sc.nextDouble();
@@ -45,5 +49,33 @@ public class Convert {
                 System.exit(0);
             }
         }
+
     }
+
+    // convert liters to gallons
+    // break code into smaller methods, use your Student.java assignment as a reference
+    // public static convertLitersToGallons(double liters){
+    //     return liters/3.785;
+    // }
+
+    // convert euros to us dollars
+
+    // get input from user
+
+    // steps
+
+
+    // Future ideas to enhance this project -> make a request to online API with Java to get the current exchange rate between euros and USD
+    // https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpRequest.html
+
+    // public static void makeRequest() {
+    //     HttpClient client = HttpClient.newHttpClient();
+    //     HttpRequest request = HttpRequest.newBuilder()
+    //             .uri(URI.create("https://reqres.in/api/users?page=2"))
+    //             .build();
+    //     client.sendAsync(request, BodyHandlers.ofString())
+    //             .thenApply(HttpResponse::body)
+    //             .thenAccept(System.out::println)
+    //             .join(); 
+    // }
 }
